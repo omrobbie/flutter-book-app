@@ -96,10 +96,24 @@ class Detail extends StatelessWidget {
       ),
     );
 
+    final bottomContent = Container(
+      height: 300.0,
+      child: SingleChildScrollView(
+        padding: EdgeInsets.all(16.0),
+        child: Text(
+          book.description,
+          style: TextStyle(
+            fontSize: 13.0,
+            height: 1.5,
+          ),
+        ),
+      ),
+    );
+
     return Scaffold(
       appBar: appBar,
       body: Column(
-        children: <Widget>[topContent],
+        children: <Widget>[topContent, bottomContent],
       ),
     );
   }
