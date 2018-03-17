@@ -69,6 +69,18 @@ class Detail extends StatelessWidget {
             RatingBar(rating: book.rating),
           ],
         ),
+        SizedBox(height: 32.0),
+        Material(
+          borderRadius: BorderRadius.circular(20.0),
+          shadowColor: Colors.blue.shade200,
+          elevation: 5.0,
+          child: MaterialButton(
+            onPressed: () {},
+            minWidth: 160.0,
+            color: Colors.blue,
+            child: text('BUY IT NOW', color: Colors.white, size: 13),
+          ),
+        ),
       ],
     );
 
