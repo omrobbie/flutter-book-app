@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
+import 'data.dart';
+import 'detail.dart';
 
 void main() => runApp(new MyApp());
 
@@ -15,6 +17,19 @@ class MyApp extends StatelessWidget {
         platform: TargetPlatform.iOS,
       ),
       home: Home(),
+      onGenerateRoute: (settings) => generateRoute(settings),
+    );
+  }
+
+  generateRoute(RouteSettings settings) {
+    final path = settings.name.split('/');
+    final title = path[1];
+
+    Book book = books.firstWhere((it) => it.title == title);
+
+    return MaterialPageRoute(
+      settings: settings,
+      builder: (context) => Detail(book),
     );
   }
 }
